@@ -1,0 +1,6 @@
+{
+    "project_name": "My Software Development Project",
+    "git_remote_repository": "https://github.com/Nicolasramsu/repository.git",
+    "test_log_file": "test_log.txt",
+    "commit_message": "Automated commit by Python script"
+}
