@@ -14,16 +14,21 @@ def load_config(file_path):
 def git_auto_commit(config):
     """Makes an automatic Git commit and pushes to the remote repository."""
     try:
-        # Add all changes
-        subprocess.run(["git", "add", "."])
+        # Check for changes before committing
+        status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
         
-        # Commit changes
-        commit_message = "Automatic commit"
-        subprocess.run(["git", "commit", "-m", commit_message])
-        
-        # Push changes to the remote repository
-        subprocess.run(["git", "push", "-u", "origin", config["git_branch"]])
-        print("Changes committed and pushed successfully.")
+        # If there are changes, commit them
+        if status.stdout:
+            subprocess.run(["git", "add", "."], check=True)  # Add all changes
+            
+            commit_message = "Automatic commit"
+            subprocess.run(["git", "commit", "-m", commit_message], check=True)  # Commit changes
+            
+            # Push changes to the remote repository
+            subprocess.run(["git", "push", "-u", "origin", config["git_branch"]], check=True)  # Push to remote
+            print("Changes committed and pushed successfully.")
+        else:
+            print("No changes to commit.")
     except Exception as e:
         print(f"Error committing and pushing changes: {e}")
 
