@@ -1,6 +1,0 @@
-{
-    "project_name": "Example Project",
-    "git_remote_repository": "https://github.com/Nicolasramsu/repository",
-    "git_branch": "main",
-    "test_log_file": "test_results.log"
-}
