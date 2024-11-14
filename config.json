@@ -1,6 +1,14 @@
 {
+<<<<<<< HEAD
     "project_name": "Example Project",
     "git_remote_repository": "https://github.com/user/example-project.git",
     "git_branch": "main",
     "test_log_file": "test_results.log"
 }
+=======
+    "project_name": "My Software Development Project",
+    "git_remote_repository": "https://github.com/Nicolasramsu/repository.git",
+    "test_log_file": "test_log.txt",
+    "commit_message": "Automated commit by Python script"
+}
+>>>>>>> 1db0a9d7fe285fcd397e4240a8a89a4208bcb0aa
